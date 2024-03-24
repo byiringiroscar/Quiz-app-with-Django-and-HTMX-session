@@ -1,0 +1,179 @@
+-   model: sim.quiz
+    pk: 1
+    fields:
+      name: Fundamental laws
+-   model: sim.question
+    pk: 1
+    fields:
+      quiz: 1
+      text: What does Newton's First Law of Motion state?
+-   model: sim.answer
+    pk: 1
+    fields:
+      question: 1
+      text: Every object in motion will change its velocity unless acted upon by an external force
+      is_correct: false
+-   model: sim.answer
+    pk: 2
+    fields:
+      question: 1
+      text: For every action, there is an equal and opposite reaction
+      is_correct: false
+-   model: sim.answer
+    pk: 3
+    fields:
+      question: 1
+      text: The force acting on an object is equal to the mass of that object times its acceleration
+      is_correct: false
+-   model: sim.answer
+    pk: 4
+    fields:
+      question: 1
+      text: An object at rest stays at rest, and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force
+      is_correct: true
+-   model: sim.question
+    pk: 6
+    fields:
+      quiz: 1
+      text: An object moves in a circular path at constant speed. According to Newton's laws, which of the following is true about the force acting on the object?
+-   model: sim.answer
+    pk: 21
+    fields:
+      question: 6
+      text: The force acts towards the center of the circular path, keeping the object in motion.
+      is_correct: true
+-   model: sim.answer
+    pk: 22
+    fields:
+      question: 6
+      text: The force acts in the direction of the object's motion, accelerating it.
+      is_correct: false
+-   model: sim.answer
+    pk: 23
+    fields:
+      question: 6
+      text: No net force acts on the object since its speed is constant.
+      is_correct: false
+-   model: sim.answer
+    pk: 24
+    fields:
+      question: 6
+      text: The force acts away from the center, balancing the object's tendency to move outward.
+      is_correct: false
+-   model: sim.question
+    pk: 7
+    fields:
+      quiz: 1
+      text: When the temperature of an ideal gas is held constant, and its volume is halved, what happens to its pressure?
+-   model: sim.answer
+    pk: 25
+    fields:
+      question: 7
+      text: It doubles.
+      is_correct: true
+-   model: sim.answer
+    pk: 26
+    fields:
+      question: 7
+      text: It halves.
+      is_correct: false
+-   model: sim.answer
+    pk: 27
+    fields:
+      question: 7
+      text: It remains unchanged.
+      is_correct: false
+-   model: sim.answer
+    pk: 28
+    fields:
+      question: 7
+      text: It quadruples.
+      is_correct: false
+-   model: sim.question
+    pk: 8
+    fields:
+      quiz: 1
+      text: In a closed system where two objects collide and stick together, what happens to the total momentum of the system?
+-   model: sim.answer
+    pk: 29
+    fields:
+      question: 8
+      text: It increases.
+      is_correct: false
+-   model: sim.answer
+    pk: 30
+    fields:
+      question: 8
+      text: It decreases.
+      is_correct: false
+-   model: sim.answer
+    pk: 31
+    fields:
+      question: 8
+      text: It remains unchanged.
+      is_correct: true
+-   model: sim.answer
+    pk: 32
+    fields:
+      question: 8
+      text: It becomes zero.
+      is_correct: false
+-   model: sim.question
+    pk: 9
+    fields:
+      quiz: 1
+      text: According to the Second Law of Thermodynamics, in which direction does heat naturally flow?
+-   model: sim.answer
+    pk: 33
+    fields:
+      question: 9
+      text: From an object of lower temperature to one of higher temperature.
+      is_correct: false
+-   model: sim.answer
+    pk: 34
+    fields:
+      question: 9
+      text: From an object of higher temperature to one of lower temperature.
+      is_correct: true
+-   model: sim.answer
+    pk: 35
+    fields:
+      question: 9
+      text: Equally between two objects regardless of their initial temperatures.
+      is_correct: false
+-   model: sim.answer
+    pk: 36
+    fields:
+      question: 9
+      text: Heat does not flow; it remains constant in an isolated system.
+      is_correct: false
+-   model: sim.question
+    pk: 10
+    fields:
+      quiz: 1
+      text: According to the principle of wave-particle duality, how can the behavior of electrons be correctly described?
+-   model: sim.answer
+    pk: 37
+    fields:
+      question: 10
+      text: Electrons exhibit only particle-like properties.
+      is_correct: false
+-   model: sim.answer
+    pk: 38
+    fields:
+      question: 10
+      text: Electrons exhibit only wave-like properties.
+      is_correct: false
+-   model: sim.answer
+    pk: 39
+    fields:
+      question: 10
+      text: Electrons can exhibit both wave-like and particle-like properties, depending on the experiment.
+      is_correct: true
+-   model: sim.answer
+    pk: 40
+    fields:
+      question: 10
+      text: Electrons behave neither like waves nor like particles.
+      is_correct: false
+

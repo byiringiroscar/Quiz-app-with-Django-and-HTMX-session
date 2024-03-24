@@ -1,0 +1,34 @@
+
+
+<div>
+
+    <form id="question-form" hx-post="{% url 'get-answer' %}">
+      {% csrf_token %}
+  
+      <h2 id="heading-text">
+        {{ question.text }}
+      </h2>
+  
+      <ol style="list-style-type: none;">
+        {% for answer in answers %}
+        <li class="option">
+          <input type="radio" id="answer-{{ forloop.counter0 }}" value="{{ answer.id }}" name="answer_id" required>
+          <label for="answer-{{ forloop.counter0 }}">{{ answer.text }}</label>
+        </li>
+        {% endfor %}
+      </ol>
+  
+      <button class="btn" type="submit" >
+        Submit your answer
+      </button>
+  
+    </form>
+  </div>
+  
+  <script>
+    window.onbeforeunload = function(){
+      return "Are you sure you want to leave? You will lose your progress.";
+    };
+  </script>
+  
+  
