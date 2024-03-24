@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start your quiz </title>
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    #topic-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: auto;
+      width: 50%;
+    }
+
+    #topic-list {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #question-form {
+      padding: 20px;
+    }
+
+    .option{
+      border-radius: 10px;
+    }
+
+    .option input[type="radio"] {
+      display: none; /* Hide the radio button */
+    }
+
+    .option label {
+      display: block;
+      padding: 10px 20px;
+      background-color: #eeeeee;
+      border-radius: 5px;
+      margin: 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .option label:hover {
+      background-color: #c9c9c9;
+    }
+
+    .option input[type="radio"]:checked + label {
+      background-color: #818181;
+      color: #fff;
+    }
+
+    #heading-text {
+      text-align: center;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-out;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<form id="topic-container" hx-post="{% url 'get-questions' %}/start">
+  {% csrf_token %}
+  <h2 id="heading-text">
+    What would you like to learn about?
+  </h2>
+  <div id="topic-list">
+
+    <p>Please pick a topic from the below topics</p>
+
+    <ol style="list-style-type: none;">
+
+      {% for topic in topics %}
+      <li class="option">
+        <input type="radio" id="topic-{{ forloop.counter0 }}" value="{{ topic.id }}" name="quiz_id" required>
+        <label for="topic-{{ forloop.counter0 }}">{{ topic.name }} ({{ topic.questions_count }} questions)</label>
+      </li>
+      {% endfor %}
+
+      {% if not topics %}
+      <li>No topics available. Have you added topics into your database?</li>
+      {% endif %}
+
+    </ol>
+
+    <button class="btn" type="submit">Start your quiz</button>
+  </div>
+</form>
+
+
+
+</body>
+</html>
