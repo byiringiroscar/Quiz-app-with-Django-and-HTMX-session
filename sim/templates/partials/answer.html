@@ -1,0 +1,36 @@
+
+<form hx-post="{% url 'get-questions' %}">
+    {% csrf_token %}
+    <input type="hidden" name="quiz_id" value="{{ answer.question.quiz_id }}">
+  
+  
+    <p>The question:</p>
+    <p>{{ answer.question.text }}</p>
+    <br>
+    <div>
+      Your answer:
+      <p>{{ submitted_answer.text }}</p>
+    </div>
+  
+  
+    <div>
+      {% if submitted_answer.is_correct %}
+      <div>
+        <p>Correct ✅</p>
+      </div>
+      {% else %}
+      <div>
+        <p>Incorrect ❌</p>
+        <p>The correct answer is: </p>
+        <p>{{ answer.text }}</p>
+      </div>
+      {% endif %}
+  
+    </div>
+  
+  
+    <button class="btn">
+      Next question
+    </button>
+  </form>
+  
